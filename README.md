@@ -33,7 +33,7 @@ cd OPVN_PiHole
 ```
 Nous allons télécharger OpenVPN, le rendre executable puis lancer l'installation
 ```sh
-wget https://github.com/Nyr/openvpn-install/raw/master/openvpn-install.sh
+wget https://raw.githubusercontent.com/RenardFurtif/opvn-pihole/main/openvpn-install.sh
 chmod 755 openvpn-install.sh
 ./openvpn-install.sh
 ```
