@@ -100,7 +100,8 @@ Toujours dans le dossier "OPVN_PiHole"
 
 Nous allons télécharger PiHole et lancer l'installation 
 ```sh
-curl -sSL https://install.pi-hole.net | bash
+wget https://raw.githubusercontent.com/RenardFurtif/opvn-pihole/main/pihole-install.sh
+sudo bash pihole-install.sh
 ```
 choisissez tun0 comme interface et 10.8.0.1/24 comme adresse IP. Vous pouvez accepter le reste des valeurs par défaut
 
@@ -251,3 +252,7 @@ Data Base Updated
 
 Client Samsung_s10 added, configuration is available at /Ubuntu/Samsung_s10.ovpn
 ```
+OpenVPN a créé un fichier de configuration client (Samsung_s10.ovpn) utilisable sur Iphone, Mac, Android, Windows, Linux.
+Il nous donne le chemin du fichier de configuration client "/Ubuntu/Samsung_s10.ovpn".
+
+Il ne vous reste plus qu'a installer le client OpenVPN sur l'appareil désiré et de charger la configuration client (Samsung_s10.ovpn).
