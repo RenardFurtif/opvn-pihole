@@ -208,7 +208,7 @@ iptables-save > /etc/pihole/rules.v4
 ```
 Bravo ! La configuration du pare-feu de PiHole est terminée.
 
-## Ajour d'un client au VPN
+## Ajout d'un client au VPN
 Toujours dans le dossier "OPVN_PiHole"
 Maintenant, que tout fonctionne, il faut créer un nouvel utilisateur dans la configuration de notre VPN afin de pouvoir nous y connecter.
 
