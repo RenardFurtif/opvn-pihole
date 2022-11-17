@@ -267,3 +267,5 @@ Cette interface web se trouve à cette adresse.
 ```
 http://pi.hole/
 ```
+
+Une page de connection s'offre au vous, je parie que vous ne connaisez pas le mot de passe :)
