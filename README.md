@@ -267,5 +267,8 @@ Cette interface web se trouve à cette adresse.
 ```
 http://pi.hole/
 ```
+Une page de connexion s'offre à vous, je parie que vous ne connaissez pas le mot de passe :)
 
-Une page de connection s'offre au vous, je parie que vous ne connaisez pas le mot de passe :)
+Pas de problème rendez-vous sur le shell de votre machine serveur.
+Entrez cette comande 
+
