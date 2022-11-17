@@ -3,7 +3,7 @@
 
 OpenVPN est un logiciel libre permettant de créer un réseau privé virtuel VPN. 
 Le Pi-hole est un serveur DNS qui protège vos appareils des contenus indésirables sans installer de logiciel côté client.
-
+`
 - Difficulté : ★☆☆☆☆
 - Puissance matérielle nécessaire : ★☆☆☆☆
 - Temps : 20-45 minutes
@@ -285,6 +285,8 @@ Création d'une clé de chiffrement et d'un certificat SSL
 ```sh
 openssl req -newkey rsa:2048 -nodes -keyout pihole.key -x509 -days 365 -out pihole.crt
 ```
-Ensuit, nous allons combiner les deux fichiers ensemble 
+Ensuite, nous allons combiner les deux fichiers ensemble et supprimer les fichiers qui ne sont plus nécessaires.
 ```sh
+cat pihole.key pihole.crt > combined.pem
+sudo rm pihole.key pihole.crt
 ``
