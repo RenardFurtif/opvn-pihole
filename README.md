@@ -281,4 +281,7 @@ Entrez 2 fois votre nouveau mot de passe et le tour est joué !
 
 Cette étape est optionnelle, elle permet d'activer HTTPS à votre interface. Elle vous permettra de communiquer avec l'interface avec une couche de chiffrement afin d'éviter que des pirates récupèrent votre mot de passe PiHole en sniffant votre trafic réseaux. (si votre mot de passe PiHole est le même que votre mot de passe d'accès SSH de votre machine cela devient plus embêtant)
 
-
+Création d'une clé de chiffrement et d'un certificat SSL
+```sh
+openssl req -newkey rsa:2048 -nodes -keyout pihole01.key -x509 -days 365 -out pihole01.crt
+```
