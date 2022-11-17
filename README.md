@@ -256,3 +256,7 @@ OpenVPN a créé un fichier de configuration client (Samsung_s10.ovpn) utilisabl
 Il nous donne le chemin du fichier de configuration client "/Ubuntu/Samsung_s10.ovpn".
 
 Il ne vous reste plus qu'à installer le client OpenVPN sur l'appareil désiré et de charger la configuration client (Samsung_s10.ovpn).
+
+## Interface WEB de PiHole
+
+Cette interface va vous permettre le nombre total de requêtes, le nombre de requêtes bloquer, le pourcentage de requêtes bloquées, votre liste de sites blacklistés, quelques graphiques et de paramétrer pihole sans passer par un shell néanmoins toutes les options ne sont pas disponible sur cette interface donc pour de grosse modification rendez-vous sur le shell de votre machine.
