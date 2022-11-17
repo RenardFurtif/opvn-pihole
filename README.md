@@ -289,4 +289,4 @@ Ensuite, nous allons combiner les deux fichiers ensemble et supprimer les fichie
 ```sh
 cat pihole.key pihole.crt > combined.pem
 sudo rm pihole.key pihole.crt
-``
+```
