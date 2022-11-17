@@ -283,5 +283,8 @@ Cette étape est optionnelle, elle permet d'activer HTTPS à votre interface. El
 
 Création d'une clé de chiffrement et d'un certificat SSL
 ```sh
-openssl req -newkey rsa:2048 -nodes -keyout pihole01.key -x509 -days 365 -out pihole01.crt
+openssl req -newkey rsa:2048 -nodes -keyout pihole.key -x509 -days 365 -out pihole.crt
 ```
+Ensuit, nous allons combiner les deux fichiers ensemble 
+```sh
+``
