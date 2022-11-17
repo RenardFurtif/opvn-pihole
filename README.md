@@ -258,12 +258,13 @@ Il nous donne le chemin du fichier de configuration client "/Ubuntu/Samsung_s10.
 Il ne vous reste plus qu'à installer le client OpenVPN sur l'appareil désiré et de charger la configuration client (Samsung_s10.ovpn).
 
 ## Interface WEB de PiHole
+### Connection à l'interface 
 
 Cette interface va vous permettre le nombre total de requêtes, le nombre de requêtes bloquer, le pourcentage de requêtes bloquées, votre liste de sites blacklistés, quelques graphiques et de paramétrer pihole sans passer par un shell néanmoins toutes les options ne sont pas disponible sur cette interface donc pour de grosse modification rendez-vous sur le shell de votre machine.
 
 Pour accéder à cette interface, il faut être connecté au VPN car celle-ci s'exécute en local.
 
-Cette interface web se trouve à cette adresse.
+Cette interface web se trouve à cette adresse depuis n'importe quel navigateur web.
 ```
 http://pi.hole/
 ```
@@ -275,5 +276,9 @@ Entrez cette comande.
 sudo pihole -a -p
 ```
 Entrez 2 fois votre nouveau mot de passe et le tour est joué !
+
+### Optionnel : Activer HTTPS pour l'interface WEB PiHole
+
+Cette étape est optionnelle, elle permet d'activer HTTPS à votre interface. Elle vous permettra de communiquer avec l'interface avec une couche de chiffrement afin d'éviter que des pirates récupèrent votre mot de passe PiHole en sniffant votre trafic réseaux. (si votre mot de passe PiHole est le même que votre mot de passe d'accès SSH de votre machine cela devient plus embêtant)
 
 
