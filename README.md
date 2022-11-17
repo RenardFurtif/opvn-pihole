@@ -260,3 +260,10 @@ Il ne vous reste plus qu'à installer le client OpenVPN sur l'appareil désiré 
 ## Interface WEB de PiHole
 
 Cette interface va vous permettre le nombre total de requêtes, le nombre de requêtes bloquer, le pourcentage de requêtes bloquées, votre liste de sites blacklistés, quelques graphiques et de paramétrer pihole sans passer par un shell néanmoins toutes les options ne sont pas disponible sur cette interface donc pour de grosse modification rendez-vous sur le shell de votre machine.
+
+Pour accéder à cette interface, il faut être connecté au VPN car celle-ci s'exécute en local.
+
+Cette interface web se trouve à cette adresse.
+```
+http://pi.hole/
+```
