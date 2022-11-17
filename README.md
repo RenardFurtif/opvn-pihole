@@ -274,4 +274,6 @@ Entrez cette comande.
 ```sh
 sudo pihole -a -p
 ```
+Entrez 2 fois votre nouveau mot de passe et le tour est joué !
+
 
