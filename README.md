@@ -322,4 +322,6 @@ Voilà ! La configuration du HTTPS est terminée.
 
 Il faut juste redémarrer le serveur lighttpd afin que les modifications soient prit en compte.
 ```sh
+sudo service lighttpd restart
 ```
+Il se peut que votre navigateur vous affiche un message de prévention, c'est normal. Le certificat n'a pas été émit par un tiers de confiance cependant le chiffrement est totalement fonctionnel. 
