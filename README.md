@@ -290,16 +290,16 @@ Ensuite, nous allons combiner les deux fichiers ensemble et supprimer les fichie
 cat pihole.key pihole.crt > combined.pem
 sudo rm pihole.key pihole.crt
 ```
-Nous allons déplacer le fichier "combined.pem" dans le répertoire approprié, un peu de rangement ne fait pas de mal
+Nous allons déplacer le fichier "combined.pem" dans le répertoire approprié, un peu de rangement ne fait pas de mal.
 ```sh
 sudo mv combined.pem /etc/lighttpd/ssl/combined.pem
 ```
-Ensuite, nous nous rendons dans le dossier le lighttpd puis nous allons crée le fichier "external.conf" afin de configurer le serveur Web en mode https.
+Ensuite, nous nous rendons dans le dossier le lighttpd puis nous allons créer le fichier "external.conf" afin de configurer le serveur Web en mode https.
 ```sh
 cd /etc/lighttpd/
 sudo nano external.conf
 ```
-Une fois que cela est fait copier coller le code juste en dessous dans "external.conf"
+Une fois que cela est fait copier coller le code juste en dessous dans "external.conf". 
 ```
 += (
   "mod_openssl"
@@ -320,7 +320,7 @@ Une fois que cela est fait copier coller le code juste en dessous dans "external
 ```
 Voilà ! La configuration du HTTPS est terminée.
 
-Il faut juste redémarrer le serveur lighttpd afin que les modifications soient prit en compte.
+Il faut juste redémarrer le serveur lighttpd afin que les modifications soient prises en compte.
 ```sh
 sudo service lighttpd restart
 ```
