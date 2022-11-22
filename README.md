@@ -325,3 +325,55 @@ Il faut juste redémarrer le serveur lighttpd afin que les modifications soient 
 sudo service lighttpd restart
 ```
 Il se peut que votre navigateur vous affiche un message de prévention, c'est normal. Le certificat n'a pas été émit par un tiers de confiance cependant le chiffrement est totalement fonctionnel. 
+### Optionnel : Mise à jour automatique du PiHole
+
+Cette étape est optionnelle, elle permet de mettre à jour PiHole, le service FTL et Lighttpd toutes les semaines à 5 h du matin tout les lundis. Les résultats des mises à jour seront stockés dans un fichier daté.
+
+Tout d'abord, nous allons créer un fichier ou serons stockées les logs des mises à jour.
+Toujours dans le fichier "opvn_pihole"
+```sh
+mkdir update_log
+```
+Ensuite, nous ouvrir le planificateur de tache. C'est l'outil crontab qui va nous permettre d'exécuter une commande à une date planifiée.
+```sh
+crontab -e
+```
+Crontab, nous retourne ceci :
+```sh
+# Edit this file to introduce tasks to be run by cron.
+#
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+#
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+#
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+#
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+#
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+#
+# For more information see the manual pages of crontab(5) and cron(8)
+#
+# m h  dom mon dow   command
+```
+Enfin, nous allons créer une tache planifiée.
+
+Elles permettent de lancer la commande "sudo pihole -up" tout les lundis. "> opvn_pihole/update_log/up-$(date +\%d_\%m_\%Y).log", cette partie permet d'enregistrer le résultat de la commande dans un fichier avec un nom daté à la date d'exécution de la tâche.
+
+Ajouter cette ligne à la fin du fichier de configuration.
+```sh
+0 5 * * 1 sudo pihole -up > opvn_pihole/update_log/up-$(date +\%d_\%m_\%Y).log
+```
+
+Les logs des mises à jour seront disponibles dans le dossier "opvn_pihole/update_log/".
+Les fichiers auront cette forme comme nom "up-21_11_2022.log". 
+
+Bravo ! La création d'une tache planifiée afin de mettre à jour Pi Hole et de ces services est terminée.
