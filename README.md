@@ -21,7 +21,7 @@ Pour ma part, j'utilise un serveur dédié de chez OVH sous Ubuntu Server 20.04 
 
 Tout d'abord, nous allons mettre à jour nos dépôts puis mettre à jour la machine.
 ```sh
-sudo apt update && apt upgrade
+sudo apt update && sudo apt upgrade
 ```
 Création d'un dossier pour stocker tous les fichiers que nous avons besoin pour installation et qui nous serviront pour la suite (Personnellement, je l'ai créé dans mon répertoire d'utilisateur.).
 ```sh
@@ -35,7 +35,7 @@ Nous allons télécharger OpenVPN, le rendre exécutable puis lancer l'installat
 ```sh
 wget https://raw.githubusercontent.com/RenardFurtif/opvn-pihole/main/openvpn-install.sh
 chmod 755 openvpn-install.sh
-./openvpn-install.sh
+sudo ./openvpn-install.sh
 ```
 En tapant les commandes ci-dessus, nous entrons dans la face d'installation. L'installateur d'OpenVPN vous réclamera quelles informations.
 
