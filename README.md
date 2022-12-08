@@ -178,26 +178,21 @@ Chain INPUT (policy DROP)
 num  target     prot opt source               destination
 1    ACCEPT     all  --  anywhere             anywhere
 2    ACCEPT     all  --  anywhere             anywhere             state RELATED,ESTABLISHED
-3    ACCEPT     all  --  anywhere             anywhere
+3    ACCEPT     udp  --  anywhere             anywhere             udp dpt:openvpn
 4    ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:domain
 5    ACCEPT     udp  --  anywhere             anywhere             udp dpt:domain
 6    ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:http
-7    ACCEPT     udp  --  anywhere             anywhere             udp dpt:80
-8    ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:ssh
-9    ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:openvpn
-10   ACCEPT     udp  --  anywhere             anywhere             udp dpt:openvpn
-11   ACCEPT     tcp  --  10.8.0.0/24          anywhere             tcp dpt:domain
-12   ACCEPT     udp  --  10.8.0.0/24          anywhere             udp dpt:domain
-13   ACCEPT     tcp  --  10.8.0.0/24          anywhere             tcp dpt:http
-14   ACCEPT     udp  --  10.8.0.0/24          anywhere             udp dpt:80
-15   ACCEPT     tcp  --  10.8.0.0/24          anywhere             tcp dpt:domain
-16   ACCEPT     tcp  --  10.8.0.0/24          anywhere             tcp dpt:http
-17   ACCEPT     udp  --  10.8.0.0/24          anywhere             udp dpt:domain
-18   ACCEPT     udp  --  10.8.0.0/24          anywhere             udp dpt:80
-19   REJECT     tcp  --  anywhere             anywhere             tcp dpt:https reject-with icmp-port-unreachable
+7    ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:ssh
+8    ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:openvpn
+9    ACCEPT     udp  --  anywhere             anywhere             udp dpt:openvpn
+10   REJECT     udp  --  anywhere             anywhere             udp dpt:80 reject-with icmp-port-unreachable
+11   REJECT     tcp  --  anywhere             anywhere             tcp dpt:https reject-with tcp-reset
+12   REJECT     udp  --  anywhere             anywhere             udp dpt:443 reject-with icmp-port-unreachable
 
 Chain FORWARD (policy ACCEPT)
 num  target     prot opt source               destination
+1    ACCEPT     all  --  anywhere             anywhere             state RELATED,ESTABLISHED
+2    ACCEPT     all  --  10.8.0.0/24          anywhere
 
 Chain OUTPUT (policy ACCEPT)
 num  target     prot opt source               destination
